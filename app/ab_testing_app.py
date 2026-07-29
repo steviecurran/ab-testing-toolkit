@@ -187,7 +187,7 @@ def make_errorbar_plot(mean1, mean2, margin1, margin2, sample_1_name, sample_2_n
     axis.set_yticks(y_positions)
     font = 12
     axis.set_yticklabels([sample_1_name, sample_2_name], fontsize=font)
-    axis.set_xlabel(f"Mean values ({confidence_percent:.2f}% confidence)",fontsize=font))
+    axis.set_xlabel(f"Mean values ({confidence_percent:.2f}% confidence)",fontsize=font)
     axis.tick_params(axis='both', labelsize=font) 
     axis.legend(fontsize=0.8*font, loc="best")
     figure.tight_layout()

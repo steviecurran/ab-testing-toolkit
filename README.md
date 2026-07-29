@@ -79,7 +79,7 @@ Launch Streamlit
 
 The repository contains a small example dataset (Mg_levels.dat) comparing magnesium levels before and after supplementation.
 
-<img src="assets/screenshots/Mg_1.png" width:500px;">
+<img src="assets/screenshots/Mg_1.png" width = "500px">
 
 The histogram illustrates the distributions.
 

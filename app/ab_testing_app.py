@@ -156,8 +156,6 @@ def make_histogram(sample_1, sample_2, sample_1_name, sample_2_name, number_of_b
         label=f"{sample_2_name}: μ = {sample_2.mean():.2f}, σ = {sample_2.std(ddof=1):.2f}"
     )
 
-    axis.set_ylabel("Number")
-    axis.set_xlabel("Value")
     font = 12
     axis.set_ylabel("Number", fontsize=font) 
     axis.set_xlabel("Value", fontsize=font)
@@ -187,11 +185,9 @@ def make_errorbar_plot(mean1, mean2, margin1, margin2, sample_1_name, sample_2_n
 
     axis.set_ylim(0, 1)
     axis.set_yticks(y_positions)
-    axis.set_yticklabels([sample_1_name, sample_2_name])
-    axis.set_xlabel(f"Mean values ({confidence_percent:.2f}% confidence)")
     font = 12
-    axis.set_ylabel("Number", fontsize=font) 
-    axis.set_xlabel("Value", fontsize=font)
+    axis.set_yticklabels([sample_1_name, sample_2_name],, fontsize=font))
+    axis.set_xlabel(f"Mean values ({confidence_percent:.2f}% confidence)",fontsize=font))
     axis.tick_params(axis='both', labelsize=font) 
     axis.legend(fontsize=0.8*font, loc="best")
     figure.tight_layout()

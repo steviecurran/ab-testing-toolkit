@@ -1,60 +1,126 @@
-### A/B Testing Toolkit: Comparing Two Means
+# A/B Testing Toolkit
 
-In A/B testing, the goal is to determine whether an observed difference between groups is statistically significant and practically meaningful, as commonly required in product experiments and business decision-making.
+An interactive Streamlit application for comparing the means of two independent samples using confidence intervals and hypothesis testing.
 
-In many real-world scenarios, small differences between groups can be statistically significant, particularly with large datasets. This tool helps distinguish meaningful effects from random variation.
 
-The notebook (*CI-2_means.ipynb*) compares two groups using confidence intervals and hypothesis testing, avoiding manual calculations and statistical tables that are prone to error.
+| Histogram | Results | Confidence Intervals |
+|------------|---------|----------------------|
+| ![](assets/screenshots/Mg_histo.png) | ![](assets/screenshots/Mg_results.png) | ![](assets/screenshots/bp_results.png) |
 
-The notebook is interactive and includes options to:
+Designed for analysts, researchers and students, the toolkit automates common statistical calculations while providing clear visualisations and explanations of the results.
 
-- Load a dataset from .csv or .dat files or input the means and standard deviations directly
-- For the full data option, plot a histogram showing the distributions of the two classes 
-- Adjust the confidence levels from the default 95%, offering more stringent testing
-- Run a one or two tailed test
-- Change the t- to z-statistic threshold from the default n = 30
-- Switch between equal (pooled) and inequal (Welch’s method) variances
+The repository also contains the original Jupyter notebook used during development for those interested in the underlying methodology.
 
-**Interpretation**
 
-This toolkit enables rapid comparison of group means and supports statistical decision-making by quantifying uncertainty and significance.
+🚀 **Live demo:** https://ab-testing-toolkit.streamlit.app *(coming soon)*
 
-**Quick Start**
+📓 **Notebook:** `notebooks/ab_testing.ipynb`
 
-Run the notebook using a simulated dataset, or to see a full workflow without interaction, change
-		 
-		USE_DEFAULTS = False
-	    to
-        USE_DEFAULTS = True
- 
-**Example 1: Raw data of a small sample**
+💻 **Run locally**
 
-The file *Mg_levels.dat* contains the levels of magnesium in a sample of people before and after taking a supplement. We wish to test the null hypothesis that the supplement does not increase the magnesium levels of the patients
+Clone the repository
 
-![](https://raw.githubusercontent.com/steviecurran/two-sample/refs/heads/main/Mg_1.png)
+	git clone https://github.com/steviecurran/ab-testing-toolkit.git
+	cd ab-testing-toolkit
 
-![](https://raw.githubusercontent.com/steviecurran/two-sample/refs/heads/main/Mg_histo.png
-)
+Create a virtual environment
 
-![](https://raw.githubusercontent.com/steviecurran/two-sample/refs/heads/main/Mg_results.png)
+	python3 -m venv .venv
+	source .venv/bin/activate
 
-At the 95% confidence level, we reject the null hypothesis and conclude that the supplement increases magnesium levels.
+Install the dependencies
 
-Using the condifence level dropdown it is straightforward to show that the null hypothesis cannot be rejected with 99% confidence.
+	pip install -r requirements.txt
 
-*Note: This example is treated as a two-sample test. In practice, a paired test may be more appropriate for before/after measurements.*
+Launch Streamlit
 
-**Example 2: Large sample test**
+	streamlit run app/ab_testing_app.py
 
-We can use the medical data below to demonstrate the toolkit on a large sample where we input the summary data only.
 
-![](https://raw.githubusercontent.com/steviecurran/two-sample/refs/heads/main/medical_large.png)
+## Features
+📊 Compare two independent sample means
 
-For example, for the *systolic blood pressure*
+📈 Automatic selection of z or t statistics
 
-![](https://raw.githubusercontent.com/steviecurran/two-sample/refs/heads/main/bp_results.png)
+📐 Equal variance (pooled) or Welch's unequal variance test
 
-Here *Men* have been entered as Sample 1 and *Women* as Sample 2.
+🎯 One- or two-tailed hypothesis tests
 
-Although the difference in means is small relative to the variability, the large sample size allows us to detect a statistically significant difference. This result remains statistically significant even at very high confidence levels (e.g. 99.9%).
- 
+📏 Adjustable confidence level
+
+📂 Load data from:
+	-repository datasets
+	- local CSV/DAT files
+	- URL
+	- summary statistics
+
+📉 Histogram comparison of sample distributions
+
+📍 Publication-style confidence interval plots
+
+📋 Plain-English interpretation of statistical results
+
+
+## Repository structure
+
+	.
+	├── app
+	│   └── ab_testing_app.py
+	├── src
+	│   └── statistics.py
+	├── data
+	├── notebooks
+	├── assets
+	└── README.md
+
+## Example workflow
+
+###Example 1 – Magnesium supplement study
+
+The repository contains a small example dataset (Mg_levels.dat) comparing magnesium levels before and after supplementation.
+
+<img src="assets/screenshots/Mg_1.png" width:500px;">
+
+The histogram illustrates the distributions.
+
+<img src="assets/screenshots/Mg_histo.png" width:500px"/>
+
+### Example 2 – Blood pressure
+
+Using summary statistics only, the toolkit compares systolic blood pressure for men and women.
+
+<img src="assets/screenshots/bp_results.png" width:500px;"/>
+
+
+Although the difference in means is relatively small, the large sample size results in a statistically significant difference.
+
+## Statistical methods
+
+The application supports
+
+- Independent two-sample t-test
+- Welch's t-test
+- z approximation for large samples
+- Confidence intervals
+- Hypothesis testing
+- Effect estimation
+
+## Original notebook
+
+The original notebook used to develop the toolkit is available in
+
+	notebooks/ab_testing.ipynb
+
+It documents the development process and provides additional explanation of the underlying statistical methods.
+
+## Future improvements
+
+- Effect size measures (Cohen's d)
+- Power analysis
+- Paired t-test
+- Proportion testing
+- Bootstrap confidence intervals
+
+## Licence
+
+MIT Licence

@@ -12,9 +12,9 @@ Designed for analysts, researchers and students, the toolkit automates common st
 The repository also contains the original Jupyter notebook used during development for those interested in the underlying methodology.
 
 
-🚀 **Live demo:**  https://ka3za9cakrov8s8csaad4k.streamlit.app
+🚀 **Run online**  https://ka3za9cakrov8s8csaad4k.streamlit.app
 
-📓 **Notebook:** `notebooks/ab_testing.ipynb`
+📓 **Run notebook:** `notebooks/ab_testing.ipynb`
 
 💻 **Run locally**
 

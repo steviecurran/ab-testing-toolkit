@@ -83,13 +83,13 @@ The repository contains a small example dataset (Mg_levels.dat) comparing magnes
 
 The histogram illustrates the distributions.
 
-<img src="assets/screenshots/Mg_histo.png" width:500px"/>
+<img src="assets/screenshots/Mg_histo.png" width="500">
 
 ### Example 2 – Blood pressure
 
 Using summary statistics only, the toolkit compares systolic blood pressure for men and women.
 
-<img src="assets/screenshots/bp_results.png" width:500px;"/>
+<img src="assets/screenshots/bp_results.png" width= "500p">
 
 
 Although the difference in means is relatively small, the large sample size results in a statistically significant difference.
